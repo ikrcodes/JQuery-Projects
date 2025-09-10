@@ -4,8 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hide & show paragraph usnig JQuery</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $("#hide").click(function(){
+            //     $("p").hide();
+            // })
+            // $("#show").click(function(){
+            //     $("p").show();
+            // })
+            let hide=false;
+            $("#btn").click(function(){
+                $("p").toggle();
+                hide=true;
+            })
+           if(hide){
+            $("#btn").text("True");
+           }
+        })
+    </script>
 </head>
 <body>
-    for
+    <div class="container">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, autem!</p>
+        <!-- <button id="show" value="show" class="btn btn-info" >Show</button>
+        <button id="hide" value="hide" class="btn btn-info" >Hide</button> -->
+        <Button class="btn btn-info" id="btn">Hide</Button>
+    </div>
 </body>
 </html>
