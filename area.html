@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(document).click(function(){
+                 var n1=Number($("#b").val());//get
+                 var n2=Number($("#h").val());//get
+             $("#a").val("Area is:"+(n1*n2)/2);//set
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <h1>Area of triangle</h1>
+                    <hr style="height: 3px; background: black;">
+                    Enter base
+                    <input type="text" id="b"><br>
+                    Enter height
+                    <input type="text" id="h"><br><br>
+                    <input type="text" id="a"><br><br>
+
+
+                    <input type="button" id="btn" value="Check" class="btn btn-success">
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

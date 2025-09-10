@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>star rating</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <script src="js/jquery.js"></script>
+    <style>
+        .fa-star{
+            font-size: 50px;
+            cursor: pointer;
+            color:green;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            var total="";
+            $("#sp1,#sp2,#sp3,#sp4,#sp5").hide();
+
+            $("#s1").click(function(){
+                total=$("#sp1").text();
+                $("#s1").css("color","brown");
+                $("#s2,#s3,#s4,#s5").css("color","green");
+            })
+
+            $("#s2").click(function(){
+                total=$("#sp2").text();
+                $("#s1,#s2").css("color","brown");
+                $("#s3,#s4,#s5").css("color","green");
+            })
+            $("#s3").click(function(){
+                total=$("#sp3").text();
+                $("#s1,#s2,#s3").css("color","brown");
+                $("#s4,#s5").css("color","green");
+            })
+            $("#s4").click(function(){
+                total=$("#sp4").text();
+                $("#s1,#s2,#s3,#s4").css("color","brown");
+                $("#s5").css("color","green");
+            })
+            $("#s5").click(function(){
+                total=$("#sp5").text();
+                $("#s1,#s2,#s3,#s4,#s5").css("color","brown");
+                $("").css("color","green");
+            })
+            //code for submit
+            $("#submit").click(function(){
+                
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-capitalize text-center text-success fw-bold">Example Of star rating using JQuery</h1>
+        <hr style="height: 5px; background-color: seagreen; border: 2px solid seagreen;">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 text-center p-4" style="box-shadow: 0 0 10px seagreen; margin: 0px auto;">
+                <i class="fa-solid fa-star" id="s1"></i>
+                <i class="fa-solid fa-star" id="s2"></i>
+                <i class="fa-solid fa-star" id="s3"></i>
+                <i class="fa-solid fa-star" id="s4"></i>
+                <i class="fa-solid fa-star" id="s5"></i>
+
+                <i class="fa-solid fa-star" id="sp1">1</i>
+                <i class="fa-solid fa-star" id="sp2">2</i>
+                <i class="fa-solid fa-star" id="sp3">3</i>
+                <i class="fa-solid fa-star" id="sp4">4</i>
+                <i class="fa-solid fa-star" id="sp5">5</i>
+                <br>
+                <h3 style="text-align: left; font-size: 25px;color: gray; margin: 10px 0;">Write Your Review....</h3>
+                <textarea name="" id="review" style="height: 160px;" class="form-control">
+
+                </textarea>
+                <input type="button" value="Submit" id="submit" class="btn btn-success form-control my-4">
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+</body>
+</html>

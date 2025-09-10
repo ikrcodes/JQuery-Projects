@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/hover-min.css">
+    <script src="js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                var n1=Number($("#txt1").val());//get
+                var n2=Number($("#txt2").val());//get
+            $("#txt3").val("Addition is:"+(n1+n2));//set
+            })
+            alert("okk")
+            $("#btn2").click(function(){
+                var n1=Number($(txt1).val());//get
+                var n2=Number($(txt2).val());//get
+            $("#txt3").val("Substraction is:"+(n1-n2));//set
+            })
+            $("#btn5").click(function(){
+                $("#txt1").val("");
+                $("#txt2").val("");
+                $("#txt3").val("");
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 panel panel-body">
+            <h2 class="text text-info text-capitalize panel panel-body">Symple Calculator </h2>
+               <hr style="background-color: red;height: 3px">
+ 
+    
+    
+   
+    Enter first no. <br>
+    <input type="text" placeholder="type here" id="txt1"  class="form-control"><br>
+    Enter second no. <br>
+    <input type="text" placeholder="type here" id="txt2"  class="form-control"><br>
+    Enter third no. <br>
+    <input type="text" id="txt3"  class="form-control" ><br> <br>
+    <input type="button" value="+" id="btn1" class="btn btn-info"><input type="button" value="-" id="btn2" class="btn btn-warning"><input type="button" value="*" id="btn3" class="btn btn-danger"><input type="button" value="/" id="btn4" class="btn btn-success"><input type="button" value="C" id="btn5" class="btn btn-primary">
+    
+    </div>
+    
+     <div class="col-sm-3"></div>
+   </div>
+   </div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/hover-min.css">
+    <script src="js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#dd1").change(function(){
+                var dd=$("#ddl").val();
+            $("div").css("backgroundColor",dd);
+
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>Example of change </h1>
+    <hr>
+    <select name="" id="ddl">
+        <option value="">Red</option>
+        <option value="">Green</option>
+        <option value="">Blue</option>
+        <option value="">Pink</option>
+    </select><br><br>
+    <div style="height: 100px; width: 100px; background: aqua;"></div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("img").hide(5000);
+            })
+            $("#btn2").click(function(){
+                $("img").show(5000);
+            })
+            $("#btn3").click(function(){
+                $("img").fadeIn(5000);
+            })
+        $("#btn4").click(function(){
+            $("img").fadeToggle(5000);
+        })
+        $("#btn5").click(function(){
+            $("img").fadeTo(500);
+        })
+        $("#btn6").click(function(){
+            $("img").slideToggle(1500);
+        })
+        $("#btn7").click(function(){
+            $("img").slideDown(1500);
+        })
+        $("#btn8").click(function(){
+            $("img").slideToggle(1500);
+        })
+        $("#btn10").click(function(){
+            $("img").animate({"left":"20%","top":"20px",},1500);
+            $("img").animate({"left":"20%","top":"30px",},1500);
+            $("img").animate({"left":"0%","top":"20px",},1500);
+
+        })
+        })
+    </script>
+</head>
+<body>
+    <h1>Example of animated function</h1>
+    <hr>
+    <input type="button"value="hide" ><input type="button"value=""><input type="button"value=""><input type="button"value=""><input type="button"value=""><input type="button"value=""><input type="button"value=""><input type="button"value=""><input type="button"value=""><input type="button"value="">
+</body>
+</html>

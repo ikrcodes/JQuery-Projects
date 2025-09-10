@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="js/jquery.js"></script>
+    <style>
+        input[type='password']{
+            border: none;
+           border-bottom: 2px dotted rgb(231, 102, 102);
+        }
+        input[type='password']:focus{
+           outline: none;
+           border: none;
+        }
+        input[type='password']::placeholder{
+            color: green;
+            font-family: monotype corsiva;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(".btn").click(function(){
+                var pp=$("#txtpass").attr('type');
+                if(pp=='password'){
+                    $("#txtpass").attr("type","text");
+                    $(".btn").val("hide").css("backgroundColor","green");
+                }
+                else{
+                    $("#txtpass").attr("type","password");
+                    $(".btn").val("see").css("backgroundColor","#5bc0de");
+                }
+            })
+            //keyup event
+            $("#txtpass").keyup(function(){
+                var len=$("#txtpass").val().length;
+                if(len>0 && len<=5)
+                $("#sp").text("passwird too short").css("color","red");
+            else if(len>=6 && len<=10)
+            $("#sp").text("password too medium").css("color","pink");
+        else
+        $("#sp").text("password too strong").css("color","green")
+                
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1 class="text-center text-capitalize text-info">Example of hide and show password</h1>
+    <div class="container">
+        <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6" style="padding: 2%; margin: 2%; box-shadow: 0px 0px 10px;">
+                    <div class="col-sm-8">
+                       <input type="password" id="txtpass" placeholder="Enter password">
+
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="button" class="btn btn-info" id="txtpassd" value="see" style="background: rgb(116, 218, 116);">
+                    </div><br><br>
+                    <span id="sp"></span>
+                </div>
+                <div class="col-sm-3"></div>
+        </div>
+    </div>
+</body>
+</html>

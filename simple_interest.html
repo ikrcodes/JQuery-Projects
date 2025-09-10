@@ -1,0 +1,42 @@
+<!-- create a text box and button to find simple interest on button and display result on span tag. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple interest</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+           $("#btn").click(function(){
+                 var n1=Number($("#amount").val());//get
+                 var n2=Number($("#year").val());//get
+                 var n3=Number($("#rate").val());//get
+
+             $("#i").text("Interest is:"+(n1*n2*n3)/100);//set
+             
+            })
+         })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 shadow p-4">
+                <h2 class="text-danger text-center">Simple Interest Calculator</h2>
+                <hr class="border border-2 border-danger shadow">
+                <form action="" class="">
+                    <input type="text" name="" id="amount" class="form-control my-2" placeholder="Enter Principal amount...">
+                    <input type="text" name="" id="year" class="form-control my-2" placeholder="Enter number of years...">
+                    <input type="text" name="" id="rate" class="form-control my-2" placeholder="How much rate %">
+                    <span id="i"></span><br>
+                    <input type="button" id="btn" value="Calculate Interest" class="btn btn-danger hover-min my-3">
+                </form>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+</body>
+</html>

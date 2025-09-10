@@ -1,0 +1,42 @@
+<!-- days to year, month, week and days -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple interest</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.js"></script>
+    <script>
+       $(document).ready(function(){
+        $("#btn").click(function(){
+            var day=Number($("#a").val());
+            var year=parseInt(day/365);
+            var month=parseInt(day%365/30);
+            var week=parseInt(day%365%30/7);
+            var days=parseInt(day%365%30%7);
+
+            $("#i").text(`${day} days is total: ${year} Yrs, ${month} Months, ${week} weeks and ${days} days`);
+
+        })
+       })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 shadow p-4">
+                <h2 class="text-danger text-center">days to year converter</h2>
+                <hr class="border border-2 border-danger shadow">
+                <form action="" class="">
+                    <input type="text" name="" id="a" class="form-control my-2" placeholder="Enter number of days...">
+                    <h3 id="i"></h3>
+                    <input type="button" id="btn" value="convert" class="btn btn-danger hover-min my-3" >
+                </form>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+</body>
+</html>

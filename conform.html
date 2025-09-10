@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="js/jquery.js"></script>
+    <script>
+        $(document).on("ready",function(){
+            $(".btn-info").on("click",function(){
+                var check=confirm("Hey naziya , wanna talk to me");
+                if(check==true)
+                $(".btn-danger").hide();
+            else{
+
+            }
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>Example of confirm ()</h1>
+    <hr>
+    <input type="button" class="btn btn-info" value="Go to home">
+    <input type="button" class="btn btn-danger" value="Talk to aman">
+</body>
+</html>
