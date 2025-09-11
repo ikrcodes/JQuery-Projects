@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image gallery</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.js"></script>
+    <style>
+        .big{
+            height: 100%;
+           width: 100%;
+        }
+        #img1{
+            border: 5px solid orange;
+        }
+        img{
+            cursor: pointer;
+        }
+        .border{
+             border: 5px solid orange;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#img1").click(function(){
+                var newSrc= $(this).attr("src");
+                
+                $(".big").attr("src",newSrc);
+            })
+             $("#img2").click(function(){
+                var newSrc= $(this).attr("src");
+                
+                $(".big").attr("src",newSrc);
+                $("#img2").css("border","5px solid orange;")
+            })
+            $("#img3").click(function(){
+                var newSrc= $(this).attr("src");
+                
+                $(".big").attr("src",newSrc);
+            })
+            $("#img4").click(function(){
+                var newSrc= $(this).attr("src");
+                
+                $(".big").attr("src",newSrc);
+            })
+            $("#img5").click(function(){
+                var newSrc= $(this).attr("src");
+                
+                $(".big").attr("src",newSrc);
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="shadow" style="height: 350px; width: 600px; border: 10px solid orange; margin: 20px auto;">
+            <img src="images/1.jpg" alt="" class="big">
+        </div>
+
+        <div class="" style=" margin: 20px auto; display: flex; align-items: center; justify-content: center; gap: 40px;">
+            <div style="height: 150px; width: 200px;">
+                <img id="img1" src="images/1.jpg" alt="" height="100%" width="100%">
+            </div>
+            <div style="height: 150px; width: 200px;">
+                <img id="img2" src="images/2.jpg" alt="" height="100%" width="100%">
+            </div>
+            <div style="height: 150px; width: 200px;">
+                <img id="img3" src="images/3.jpg" alt="" height="100%" width="100%">
+            </div>
+            <div style="height: 150px; width: 200px;">
+                <img id="img4" src="images/4.jpg" alt="" height="100%" width="100%">
+            </div>
+            <div style="height: 150px; width: 200px;">
+                <img id="img5" src="images/5.jpg" alt="" height="100%" width="100%">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
