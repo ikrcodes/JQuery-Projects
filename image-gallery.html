@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/jquery.js"></script>
     <style>
+        
         .big{
             height: 100%;
            width: 100%;
+            transition: 1s ease-in-out;
         }
         #img1{
             border: 5px solid orange;
@@ -23,31 +25,40 @@
     </style>
     <script>
         $(document).ready(function(){
-            $("#img1").click(function(){
+            $("#img1").hover(function(){
                 var newSrc= $(this).attr("src");
                 
                 $(".big").attr("src",newSrc);
+                $("#img2,#img3,#img4,#img5").css("border","none");
+                $("#img1").css("border","5px solid orange");
             })
-             $("#img2").click(function(){
+             $("#img2").hover(function(){
                 var newSrc= $(this).attr("src");
                 
                 $(".big").attr("src",newSrc);
-                $("#img2").css("border","5px solid orange;")
+                $("#img1,#img3,#img4,#img5").css("border","none");
+                $("#img2").css("border","5px solid orange");
             })
-            $("#img3").click(function(){
+            $("#img3").hover(function(){
                 var newSrc= $(this).attr("src");
                 
                 $(".big").attr("src",newSrc);
+                $("#img1,#img2,#img4,#img5").css("border","none");
+                $("#img3").css("border","5px solid orange");
             })
-            $("#img4").click(function(){
+            $("#img4").hover(function(){
                 var newSrc= $(this).attr("src");
                 
                 $(".big").attr("src",newSrc);
+                $("#img1,#img2,#img3,#img5").css("border","none");
+                $("#img4").css("border","5px solid orange");
             })
-            $("#img5").click(function(){
+            $("#img5").hover(function(){
                 var newSrc= $(this).attr("src");
                 
                 $(".big").attr("src",newSrc);
+                $("#img1,#img2,#img3,#img4").css("border","none");
+                $("#img5").css("border","5px solid orange");
             })
         })
     </script>
