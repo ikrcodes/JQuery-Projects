@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swap div content</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.js"></script>
+    <style>
+        .box{
+            height: 200px;
+            width: 200px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        p{
+            font-size: 25px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                var txt1=$("#txt1").text();
+                var txt2=$("#txt2").text();
+                
+                //swapping
+                $("#txt1").text(txt2);
+                $("#txt2").text(txt1);
+            })
+        })
+    </script>
+    
+</head>
+<body>
+    <div class="container" style="display: flex; gap: 50px; justify-content: center;">
+        <div class="box bg-info">
+            <p id="txt1">Ikrar</p>
+        </div>
+        <div class="box box2 bg-danger">
+            <p id="txt2">Ahmad</p>
+        </div>
+    </div>
+    <div class="container my-4" style="display: flex; justify-content: center; ">
+        <button id="btn" class="btn btn-info shadow ">click to swap</button>
+    </div>
+</body>
+</html>

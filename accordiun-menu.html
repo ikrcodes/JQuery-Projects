@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordiun menu</title>
+    <script src="js/jquery.js"></script>
+    <style>
+        .accordion h3 {
+        background: #333;
+        color: #fff;
+        padding: 10px;
+        cursor: pointer;
+        margin: 0;
+        }
+
+        .accordion .content {
+        display: none; /* by default hidden */
+        padding: 10px;
+        border: 1px solid #ddd;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function(){
+    $(".accordion h3").click(function(){
+        // Sabse pehle, jo content open hai use close karo
+        $(".accordion .content").slideUp();
+
+        // Agar is heading ka next content already open nahi hai tabhi open karo
+        if(!$(this).next().is(":visible")) {
+        $(this).next().slideDown();
+        }
+  });
+});
+
+    </script>
+</head>
+<body>
+    <div class="accordion">
+  <h3>Section 1</h3>
+  <div class="content">
+    <p>Yeh section 1 ka content hai.</p>
+  </div>
+
+  <h3>Section 2</h3>
+  <div class="content">
+    <p>Yeh section 2 ka content hai.</p>
+  </div>
+
+  <h3>Section 3</h3>
+  <div class="content">
+    <p>Yeh section 3 ka content hai.</p>
+  </div>
+</div>
+
+</body>
+</html>

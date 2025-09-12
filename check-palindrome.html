@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>count digits</title>
+    <title>check palindrom</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/jquery.js"></script>
     <script>
         $(document).ready(function(){
-            $("#num").keyup(function(){
-                var re="";
-                var num = Number($("#num").val());
+            $(".btn").click(function(){
                 
-                var count=0;
-                while(num>0){
-                    num=parseInt(num/10);
-                    count = count+1;
+                var num=Number($("#num").val());
+                var rem, rev=0;
+                var temp=num;
+                while(temp!=0){
+                    rem=temp%10;
+                    rev= rev*10+rem;
+                    temp=parseInt(temp/10);
                 }
-                re=` You Entered ${count} digits`
-                $("#list").text(re);
+                if(num==rev){
+                    $("#list").text("this is palindrome number");
+                }
+                else{
+                     $("#list").text("this is not a palindrome number");
+                }
             })
         })
     </script>
@@ -28,9 +33,10 @@
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4 my-4 shadow p-4">
-                <h2 class="text-center text-info text-capitalize">Digit Counter</h2>
+                <h2 class="text-center text-info text-capitalize">Check Number is Palindrom number</h2>
                 <hr style="height: 5px;  background: skyblue;">
                 <input id="num" type="text" class="form-control mx-auto" placeholder="Enter Your number...">
+                <input type="button" value="Check" class="btn btn-info  my-3 text-white">
                 <span id="list">
 
                 </span>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reverse number in another textbox</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            var rev, rem, num;
+            $("#txt1").keyup(function(){
+                rev=0;
+                num=parseInt($("#txt1").val());
+                while(num!=0){
+                    rem=num%10;
+                    rev=rev*10+rem;
+                    num=parseInt(num/10);
+                }
+            $("#txt2").val(rev);
+            })
+            
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center text-success">Example of reverse number using jquery</h1>
+        <hr style="height: 5px; background-color: seagreen;">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 shadow p-3">
+                enter string
+                <input type="text" class="form-control" id="txt1">
+                reverse string
+                <input type="text" class="form-control" id="txt2">
+                <!-- <input type="button" class="btn btn-success my-3 form-control" id="btn" value="click"> -->
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+</body>
+</html>

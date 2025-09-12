@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check Armstrong number</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".btn").click(function(){
+                var re=""; var digit=0, rem, res=0;
+                var num = Number($("#num").val());
+                
+                var temp1=num;
+                while(temp1!=0){
+                    temp1=parseInt(temp1/10);
+                    digit=digit+1;
+                }
+                var temp2=num;
+                while(temp2!=0){
+                    rem= temp2%10;
+                    res=Math.pow(rem,digit)+res;
+                    temp2=parseInt(temp2/10);
+                }
+                if(num==res){
+                    $("#list").text(`${num} is a armstrong number!`);
+                }
+                else{
+                    $("#list").text(`${num} is not a armstrong number!`);
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 my-4 shadow p-4">
+                <h2 class="text-center text-info text-capitalize">Check Number is Armstrong or not</h2>
+                <hr style="height: 5px;  background: skyblue;">
+                <input id="num" type="text" class="form-control mx-auto" placeholder="Enter Your number...">
+                <input type="button" value="Check" class="btn btn-info  my-3 text-white">
+                <span id="list">
+
+                </span>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+</body>
+</html>

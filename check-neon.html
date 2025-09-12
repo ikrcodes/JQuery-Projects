@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>count digits</title>
+    <title>check neon number</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/jquery.js"></script>
     <script>
         $(document).ready(function(){
-            $("#num").keyup(function(){
-                var re="";
-                var num = Number($("#num").val());
-                
-                var count=0;
-                while(num>0){
-                    num=parseInt(num/10);
-                    count = count+1;
+            $(".btn").click(function(){
+                var num= parseInt($("#num").val());
+                var square= num*num;
+                var rem, sum=0;
+                while(square!=0){
+                    rem=square%10;
+                    sum=sum+rem;
+                    square= parseInt(square/10);
                 }
-                re=` You Entered ${count} digits`
-                $("#list").text(re);
+                if(sum==num){
+                    $("#list").text("This is neon number");
+                }
+                else{
+                    $("#list").text("This is not a neon number");
+                }
             })
         })
     </script>
@@ -28,9 +32,10 @@
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4 my-4 shadow p-4">
-                <h2 class="text-center text-info text-capitalize">Digit Counter</h2>
+                <h2 class="text-center text-info text-capitalize">Check Number is neon number</h2>
                 <hr style="height: 5px;  background: skyblue;">
                 <input id="num" type="text" class="form-control mx-auto" placeholder="Enter Your number...">
+                <input type="button" value="Check" class="btn btn-info  my-3 text-white">
                 <span id="list">
 
                 </span>
