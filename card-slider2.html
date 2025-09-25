@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>card slider</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <script src="js/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+    
+        var cardWidth=$(".card-item").outerWidth(true);
+        var totalCards=$(".card-item").length;
+        var totalWidth=totalCards*cardWidth;
+        var wrapperWidth=$(".card-wrapper").width();
+        var maxTranslate=totalWidth-wrapperWidth;
+
+        var current=0;
+        $("#btn-right").click(function(){
+            current=current+cardWidth;
+
+            if(current>maxTranslate){
+                current=maxTranslate;
+            }
+            $(".card-body").css("transform", `translateX(-${current}px)`);
+        })
+        $("#btn-left").click(function(){
+            current=current-cardWidth;
+            
+            if(current<0){
+                current=0;
+            }
+            $(".card-body").css("transform",`translateX(-${current}px)`);
+        })
+        
+    })
+    </script>
+    <style>
+      .container {
+        background-color: #e2dfdf;
+        padding: 10px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .card-wrapper{
+        width: 90%;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      .card-body {
+        padding: 10px;
+       height: 200px;
+       display: flex;
+       transition: 0.3s ease-in-out;
+       /* gap: 20px; */
+      }
+      .card-item {
+      display: grid;
+      height: 100%;
+      min-width: 235px;
+      margin-right: 20px;
+      background-color: #636363;
+      place-items:center;
+      color: white;
+      font-size: 30px;
+      font-weight: 700;
+      box-shadow: 0px 0px 10px rgb(255, 254, 254);
+      border-radius: 10px;
+      transition: all 0.3s ease-in-out;
+      }
+      .card-item:hover {
+        transform: scale(1.05);
+        
+      }
+      .fa-solid{
+        background-color: white;
+        font-size: 25px;
+        border-radius: 50%;
+        color: #b3b3b3;
+        padding: 5px;
+        transition: all 0.3s;
+        cursor: pointer;
+      }
+      .fa-solid:hover{
+        color: #636363;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <i class="fa-solid fa-arrow-left" id="btn-left"></i>
+      <div class="card-wrapper">
+        <div class="card-body">
+          <div class="card-item">Card 1</div>
+          <div class="card-item">Card 2</div>
+          <div class="card-item">Card 3</div>
+          <div class="card-item">Card 4</div>
+          <div class="card-item">Card 5</div>
+          <div class="card-item">Card 6</div>
+          <div class="card-item">Card 7</div>
+          <div class="card-item">Card 8</div>
+          <div class="card-item">Card 9</div>
+          <div class="card-item">Card 10</div>
+          <div class="card-item">Card 11</div>
+          <div class="card-item">Card 12</div>
+        </div>
+      </div>
+      <i class="fa-solid fa-arrow-right" id="btn-right"></i>
+    </div>
+  </body>
+</html>

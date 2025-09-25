@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.js"></script>
+   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Montserrat", sans-serif;
+      background-color: #BFBEF3;
+    }
+    .col-sm-6{
+        background-color: rgb(37, 35, 44);
+        color: skyblue;
+        margin: 8% auto;
+        height: 350px;
+        box-shadow: 10px 8px 10px gray;
+        border-radius: 10px;
+        border: 1px solid skyblue;
+    }
+    input{
+        height: 40px;
+        width: 40px;
+        margin: 10px 5px;
+        padding: 5px;
+        font-size: 25px;
+        border: 2px solid skyblue;
+        background-color: rgb(100, 99, 99);
+        color: skyblue;
+    }
+    </style>
+    <script>
+        $(document).ready(function(){
+            var otp="";
+            $("#gotp").click(function(){
+                //6 digits otp generation
+                 otp=Math.floor(Math.random()*1000000)
+                alert(otp);
+
+
+            })
+
+            $("#btn").click(function(){
+                
+                var t1= $("#txt1").val();
+                var t2= $("#txt2").val();
+                var t3= $("#txt3").val();
+                var t4= $("#txt4").val();
+                var t5= $("#txt5").val();
+                var t6= $("#txt6").val();
+
+                var userInput="";
+                if(!t1 || !t2 || !t3 || !t4 || !t5 || !t6){
+                    $("#message").text("All fields are required!")
+                }
+                else{
+                    // alert(t1+t2+t3+t4+t5+t6);
+                    userInput+=t1+t2+t3+t4+t5+t6
+                    $("#message").text("")
+                    $("#txt1").val("");
+                    $("#txt2").val("");
+                    $("#txt3").val("");
+                    $("#txt4").val("");
+                    $("#txt5").val("");
+                    $("#txt6").val("");
+                    }
+                if(otp==userInput){
+                    alert("OTP matched...")
+                }
+                else{
+                    alert("Please enter a correct otp");
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row " style="height: 100%;" >
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6 text-center p-4">
+                <h2 class="my-3">Verify</h2>
+                <p class="my-3">Enter your 6 digit OTP</p>
+                <hr style="height:5px; background-color: skyblue; width:80%; margin: auto;">
+                <form action="" class="my-3">
+                    <input type="text" id="txt1" autocomplete="off"  maxlength="1">
+                    <input type="text" id="txt2" autocomplete="off"  maxlength="1">
+                    <input type="text" id="txt3" autocomplete="off"  maxlength="1">
+                    <input type="text" id="txt4" autocomplete="off"  maxlength="1">
+                    <input type="text" id="txt5" autocomplete="off"  maxlength="1">
+                    <input type="text" id="txt6" autocomplete="off"  maxlength="1"><br>
+                    
+                    <input type="button" class="btn btn-info form-control w-25" value="Verify" id="btn">
+                    <span id="gotp" style="cursor: pointer;">generate otp</span>
+                    <br>
+                    <span id="message" style="font-size: 16px; color: azure;"></span>
+                    
+                </form>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+    </div>
+</body>
+</html>

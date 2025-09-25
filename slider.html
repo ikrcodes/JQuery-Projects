@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <script src="js/jquery.js"></script>
+   <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+    .slider-container {
+      height: 200px;
+      width: 85vw;
+      max-width: 1400px;
+      position: relative;
+      overflow: hidden;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    .btn {
+      position: absolute;
+      top: calc(50% - 15px);
+      width: 20px;
+      height: 20px;
+      border-left: 5px solid #696969;
+      border-top: 5px solid #696969;
+      cursor: pointer;
+    }
+    .btn:hover {
+      transform: scale(1.2);
+    }
+    .btn:first-of-type {
+      transform: rotate(-45deg);
+      left: 10px;
+    }
+    .btn:last-of-type {
+      transform: rotate(135deg);
+      right: 10px;
+    }
+    .slider {
+      display: flex;
+      transition: all 0.5s ease;
+    }
+    .slide {
+      min-width: 200px;
+      height: 200px;
+      margin: auto 10px;
+      background-color: #b5b5b5;
+      border-radius: 5px;
+      box-shadow: 2px 2px 4px 3px #fff, -2px -2px 4px 2px #fff;
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="slider-container">
+      <span class="btn" id="prev"></span>
+      <div class="slider" id="slider">
+        <div class="slide">1</div>
+        <div class="slide">2</div>
+        <div class="slide">3</div>
+        <div class="slide">4</div>
+        <div class="slide">5</div>
+        <div class="slide">6</div>
+        <div class="slide">7</div>
+        <div class="slide">8</div>
+      </div>
+      <span class="btn" id="next"></span>
+    </div>
+  </div>
+</body>
+</html>

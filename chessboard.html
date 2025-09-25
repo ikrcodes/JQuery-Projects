@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chessboard</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.js"></script>
+</head>
+<body style="background-color: beige;">
+    <script>
+        
+        var tbl="";
+        tbl+="<table align='center' width='600px' border='1px' cellspacing='0px' cellpadding='30px'>"
+            for(r=1; r<=8; r++){
+                if(r%2==0){
+                    tbl+="<tr>"
+                        for(c=1;c<=8; c++){
+                            if(c%2==0){
+                                tbl+="<td bgcolor='white'></td>"
+                            }
+                            else{
+                                tbl+="<td bgcolor='black'></td>"
+                            }
+                        }
+                    tbl+="</tr>"
+                }
+                else{
+                    tbl+="<tr>"
+                        for(c=1;c<=8; c++){
+                            if(c%2==0){
+                                tbl+="<td bgcolor='black'></td>"
+                            }
+                            else{
+                                tbl+="<td bgcolor='white'></td>"
+                            }
+                        }
+                    tbl+="</tr>"
+                }
+            }
+        tbl+="</table>"
+        document.write(tbl)
+    </script>
+    
+</body>
+</html>

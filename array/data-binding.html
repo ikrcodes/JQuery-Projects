@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data binding using array</title>
+</head>
+<body>
+    <script src="../js/jquery.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            var list="";
+            var arr=["HTML","CSS","Javascript","React js","Bootstrap","PHP","Java","C","C++","C#","Python"]
+            
+            document.write("<h3 style='text-align:center'>Web Development Technologies...<h3/>")
+            list +="<ul style='width:50%; margin:0px auto; background-color:#b3b3b3'>"
+            for(var i=0; i<arr.length; i++){
+                var val=arr[i];
+                list+=`<li style="list-style:none; margin:10px 20px">${val}</li>`;
+            }
+            list+="</ul>"
+            document.write(list);
+        })
+    </script>
+</body>
+</html>

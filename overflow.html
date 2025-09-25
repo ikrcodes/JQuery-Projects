@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>overflow</title>
+    <style>
+        .div{
+            width: 500px;
+            height: 300px;
+            background-color: cadetblue;
+            overflow-x:auto;
+        }
+        .div::-webkit-scrollbar{
+            background-color: black;
+        }
+        .div::-webkit-scrollbar-thumb{
+            background: linear-gradient( red, yellow, blue);
+            border-radius: 5px;
+        }
+        /*Loder*/
+
+        .loder{
+            height: 100px;
+            width: 100px;
+            border: 8px solid #b3b3b3;
+            border-top: 10px solid black;
+            border-radius:50%;
+            animation: rotate 1s infinite;
+        }
+        @keyframes rotate{
+            100%{
+                rotate: 360deg;;
+            }
+        }
+
+        /* hover-underline */
+        .name{
+            font-weight: 900;
+            position: relative;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+       .name::after{
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        height: 5px;
+        width: 0;
+        background-color: black;
+        transform: translateX(-50%);
+        transition: all 0.5s;
+       }
+       .name:hover::after{
+        width: 200px;
+       }
+
+    </style>
+</head>
+<body>
+    <div class="div">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum cumque iure impedit molestiae, corrupti minus nesciunt sit a, blanditiis et voluptatibus nulla, voluptas non. Enim corrupti consequuntur beatae velit itaque impedit saepe totam cumque illo, earum, vitae, ipsum quidem expedita! Quaerat ut alias deleniti enim sint aspernatur! Vel deleniti minus corrupti quaerat fugiat nulla magnam beatae ad culpa excepturi, quis, quas molestias iure natus repellendus? Ipsa voluptatem assumenda consectetur temporibus sequi eveniet impedit cupiditate dignissimos modi odio, quia reiciendis maiores! Totam minima optio tempore laudantium incidunt expedita similique molestias, et recusandae non earum architecto ex! Possimus repellat, magnam commodi dolores facilis explicabo quo minima architecto molestiae incidunt non tempore pariatur corporis illo ea quae hic rem nam reiciendis quis quia blanditiis provident. Ab ratione, autem maiores deserunt incidunt aliquam accusamus, suscipit error nostrum voluptates, sed laboriosam animi ducimus fugit consequuntur! Blanditiis eligendi pariatur impedit quibusdam officiis tenetur totam quisquam nemo fugiat reiciendis illum eaque quia autem sapiente illo cum nostrum soluta explicabo, ullam magnam modi quasi error doloribus velit. Iure sequi ut commodi numquam ducimus quia ipsum vel consequatur fuga, tempora dicta deleniti et? Laborum, magni a qui quia nostrum, molestiae cum facere dolore praesentium aperiam quisquam? Quae, ratione explicabo.
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="loder"></div>
+
+
+    <br>
+    <br>
+    <br>
+    <div style="width: 200px"><h1 class="name">Ikrar Ahmad</h1></div>
+
+
+</body>
+</html>

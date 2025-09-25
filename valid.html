@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validation</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.js"></script>
+    <style>
+        body{
+            background-color: #3f3f3f;
+        }
+        .col-sm-6{
+            background-color: rgb(255, 255, 255);
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("form").submit(function(){
+                var name=$("#txtname").val();
+                var mobile=$("#txtmobile").val();
+                //check if input field is not empty
+                if(name!=null && name!="" && mobile!=null && mobile !=""){
+                    //check mobile numbers should be digits
+                    if(!isNaN(mobile)){
+                        //check mobile number should be 10 digits only
+                        if(mobile.length==10){
+                            //check mobile number contains only digits
+                            var first= mobile.at(0);
+                            //check mobile number should be starts from 6,7,8 or 9,
+                            if(first>5 && first<=9){
+                                return true;
+                            }
+                            else{
+                                $("#spmobile").text("please enter a valid phone number!").css("color","red");
+                            return false;
+                            }
+                        }
+                        else{
+                            $("#spmobile").text("mobile number should be 10 digits").css("color","red");
+                            return false;
+                        }
+
+                    }
+                    else{
+                        $("#spmobile").text("Digits Only").css("color","red");
+                        return false;
+                    }
+                }
+                else{
+                    $("#spname").text("please enter name!").css("color","red");
+                    $("#spmobile").text("please enter email!").css("color","red");
+                    return false;
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <h3 class="text text-center text-info my-3">Example of validation using jquery</h3>
+                <form action="#" method="post" class="shadow my-4">
+                    <table class="table table-responsive">
+                    <tr>
+                        <td>Enter name 
+                            <input type="text" name="" id="txtname" class="form-control">
+                        </td>
+                        <td>
+                            <br>
+                            <span id="spname"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Enter mobile no. 
+                            <input type="text" name="" id="txtmobile" class="form-control">
+                        </td>
+                        <td>
+                            <br>
+                            <span id="spmobile"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" name="" id="btn-submit" class="form-control btn btn-info" >
+                        </td>
+                    </tr>
+                </table>
+                </form>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+    </div>
+</body>
+</html>

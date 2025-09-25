@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Search Table</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    *{
+        font-family: "Montserrat", sans-serif;
+    }
+   
+    h3{
+        margin-top:40px;
+        font-size: 40px;
+        font-weight: 600;
+        color: rgb(54, 104, 76);
+        text-align: center;
+    }
+    hr{
+        height: 2px;
+        background-color: seagreen;
+        margin: 0 auto;
+    }
+    thead{
+        background-color: #36684c;
+        color: whitesmoke;
+    }
+    tr:nth-child(2n){
+        background-color: #f9f9f9;
+    }
+    #search{
+        float: right;
+        margin: 20px;
+        margin-right: 5%;
+    }
+    input{
+        width: 350px;
+        border-radius: 5px;
+        font-size: 18px;
+        border: 2px solid rgb(54, 104, 76);
+    }
+    label{
+        font-size: 18px;
+        color: #36684c;
+    }
+  </style>
+<script>
+    $(document).ready(function(){
+        $("#txt").keyup(function(){
+            // alert($("#txt").val());
+            var search=$("#txt").val().toLowerCase();
+            $("tbody tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(search) > -1)
+            });
+
+        })
+    })
+</script>
+</head>
+<body>
+<h3>students details table</h3>
+<hr class="container">
+<div id="search">
+    <label for="">Search students details:</label>
+    <input type="text" id="txt"  placeholder="enter id/name/mail/college name/ city " spellcheck="false">
+    <hr style="margin-top: 10px; height: 2px; width: 100%;">
+</div>
+<table class="container table table responsive my-3">
+    <thead>
+        <tr>
+            <th>Student Id</th>
+            <th>Student Name</th>
+            <th>Email Id</th>
+            <th>College</th>
+            <th>City</th>    
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td>101</td>
+        <td>Aarav Sharma</td>
+        <td>aarav.sharma@example.com</td>
+        <td>IIT Delhi</td>
+        <td>New Delhi</td>
+    </tr>
+    <tr>
+        <td>102</td>
+        <td>Ananya Verma</td>
+        <td>ananya.verma@example.com</td>
+        <td>Delhi University</td>
+        <td>Delhi</td>
+    </tr>
+    <tr>
+        <td>103</td>
+        <td>Rohan Gupta</td>
+        <td>rohan.gupta@example.com</td>
+        <td>IIT Bombay</td>
+        <td>Mumbai</td>
+    </tr>
+    <tr>
+        <td>104</td>
+        <td>Priya Singh</td>
+        <td>priya.singh@example.com</td>
+        <td>Mumbai University</td>
+        <td>Mumbai</td>
+    </tr>
+    <tr>
+        <td>105</td>
+        <td>Aditya Mehta</td>
+        <td>aditya.mehta@example.com</td>
+        <td>Banaras Hindu University</td>
+        <td>Varanasi</td>
+    </tr>
+    <tr>
+        <td>106</td>
+        <td>Kavya Iyer</td>
+        <td>kavya.iyer@example.com</td>
+        <td>Anna University</td>
+        <td>Chennai</td>
+    </tr>
+    <tr>
+        <td>107</td>
+        <td>Rahul Kumar</td>
+        <td>rahul.kumar@example.com</td>
+        <td>Patna University</td>
+        <td>Patna</td>
+    </tr>
+    <tr>
+        <td>108</td>
+        <td>Simran Kaur</td>
+        <td>simran.kaur@example.com</td>
+        <td>Panjab University</td>
+        <td>Chandigarh</td>
+    </tr>
+    <tr>
+        <td>109</td>
+        <td>Manish Patel</td>
+        <td>manish.patel@example.com</td>
+        <td>Gujarat University</td>
+        <td>Ahmedabad</td>
+    </tr>
+    <tr>
+        <td>110</td>
+        <td>Sneha Reddy</td>
+        <td>sneha.reddy@example.com</td>
+        <td>Osmania University</td>
+        <td>Hyderabad</td>
+    </tr>
+    <tr>
+        <td>111</td>
+        <td>Vikram Desai</td>
+        <td>vikram.desai@example.com</td>
+        <td>MS University</td>
+        <td>Vadodara</td>
+    </tr>
+    <tr>
+        <td>112</td> 
+        <td>Neha Choudhary</td>
+        <td>neha.choudhary@example.com</td>
+        <td>JNU</td>
+        <td>New Delhi</td>
+    </tr>
+    <tr>
+        <td>113</td>
+        <td>Siddharth Nair</td>
+        <td>siddharth.nair@example.com</td>
+        <td>Cochin University</td>
+        <td>Kochi</td>
+    </tr>
+    <tr>
+        <td>114</td>
+        <td>Pooja Mishra</td>
+        <td>pooja.mishra@example.com</td>
+        <td>Allahabad University</td>
+        <td>Prayagraj</td>
+    </tr>
+    <tr>
+        <td>115</td>
+        <td>Arjun Joshi</td>
+        <td>arjun.joshi@example.com</td>
+        <td>University of Rajasthan</td>
+        <td>Jaipur</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

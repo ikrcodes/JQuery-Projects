@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcultaor</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.js"></script>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #c5c5c5;
+        }
+        .calculator{
+            width: 400px;
+            box-shadow: 0px 0px 10px gray;
+            background-color: rgb(35, 35, 46);
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 25px;
+        }
+        .input{
+            height: 120px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            position: relative;
+            background-color: rgb(44, 44, 56);
+        }
+        input{
+            width: 100%;
+            height: 50%;
+            background: transparent;
+            border: none;
+            font-size: 22px;
+            color: whitesmoke;
+            text-align: right;
+            padding: 0px 10px;
+        }
+        input:nth-child(2){
+            width: 100%;
+            height: 50%;
+            background: transparent;
+            border: none;
+            font-size: 30px;
+            color: whitesmoke;
+            text-align: right;
+            padding: 0px 10px;
+            letter-spacing: 1px;
+        }
+        input:focus{
+            outline: none;
+        }
+        .buttuns{
+            display: grid;
+            padding: 20px;
+            grid-template-rows: repeat(5,1fr);
+            gap: 15px;
+            grid-template-columns: repeat(4,1fr);
+        }
+        .btn{
+            background-color: white;
+            border-radius: 20px;
+            height: 50px;
+            font-size: 22px;
+        }
+        .golden{
+            background-color: goldenrod;
+            color: white;
+            transition: all 0.3s ease-in;
+        }
+        .golden:hover{
+            background-color: rgb(176, 126, 0);
+            color: white;
+        }
+        .gray{
+            background-color: #c5c5c5;
+            color: black;
+            transition: all 0.3s ease-in;
+        }
+        .gray:hover{
+            background-color: #a1a1a1;
+            color: black;
+        }
+        .gray-2{
+            background-color: rgb(73, 73, 73);
+            color: white;
+            transition: all 0.3s ease-in;
+        }
+        .gray-2:hover{
+            background-color: rgb(65, 64, 64);
+            color: white;
+        }
+        .red{
+            background-color: rgb(251, 42, 42);
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="input">
+            <input type="text" id="txt" value="876543" disabled>
+            <input type="text" id="txt" value="876543">
+        </div>
+        <div class="buttuns">
+            <div class="btn gray">AC</div>
+            <div class="btn gray">+/-</div>
+            <div class="btn gray">%</div>
+            <div class="btn golden">/</div>
+            <div class="btn gray-2">7</div>
+            <div class="btn gray-2">8</div>
+            <div class="btn gray-2">9</div>
+            <div class="btn golden">x</div>
+            <div class="btn gray-2">4</div>
+            <div class="btn gray-2">4</div>
+            <div class="btn gray-2">6</div>
+            <div class="btn golden">-</div>
+            <div class="btn gray-2">1</div>
+            <div class="btn gray-2">2</div>
+            <div class="btn gray-2">3</div>
+            <div class="btn golden">+</div>
+            <div class="btn gray-2">0</div>
+            <div class="btn gray-2">.</div>
+            <div class="btn gray-2 red">X</div>
+            <div class="btn golden eql">=</div>
+        </div>
+    </div>
+</body>
+</html>

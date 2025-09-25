@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Input In Array</title>
+    <script src="../js/jquery.js"></script>
+
+    <script>
+       var arr=[1,2,3,4,5,6,7,8,9]; //Array
+
+       arr.push(11);//add a new element at the end of array
+       document.write(arr+"<br>");
+
+       arr.pop();//remove from last index
+       document.write(arr+"<br>");
+
+       arr.unshift(10);//add at the 0 index
+       document.write(arr+"<br>");
+
+       arr.shift();//remove from 0 index
+       document.write(arr+"<br>");
+
+       arr.reverse();//reverse of array
+       document.write(arr+"<br>");
+
+       arr.sort()//sorting in assending order
+        document.write(arr+"<br>");
+
+        // document.write(arr.join(" "));
+        document.write(arr+"<br>");
+
+        var arr1=[1,2,3];
+        var arr2=[4,5,6];
+        // var arr3=arr1.concat(arr2);
+        var arr3=[...arr1,...arr2];//spread operator
+        document.write(arr3+"<br>");
+        console.log(arr3);
+
+        var arrslice=arr.slice(2,7);
+        document.write(arrslice+"<br>");
+
+        //add a new element at given position
+        arr.splice(3,0,20)//3: is index where to insert, 0: this is used for no one elements delete, and last value is value which are to insert
+        document.write(arr+"<br>");
+
+        //delete from specific index
+        arr.splice(3,1)//4:is index and 1 is how many elements to be delete
+        document.write(arr+"<br>");
+
+        document.write(arr.indexOf(4)+"<br>");//return index of given element
+
+        document.write(arr.includes(4)+"<br>");//if available in array return true otherwise false
+
+        arr.forEach(i=>{
+            document.write(i+"<br>")
+        })
+        
+        arr.map(function(x){
+            document.write(x*4+",")
+        })
+        document.write("<br>")
+
+        arr.filter(i=>{
+            if(i<5){
+                document.write(i+" ");
+            }
+        })
+        arr.forEach(i=>{
+            if(i%2!=0){
+                console.log(i);
+            }
+        })
+        //indexOf()
+        var indexOf=[1,2,2,1].indexOf(1);
+        document.write("<br>"+indexOf+"<br>");
+        //lastindexOf()
+        var lastIndexOf=[1,2,2,1].lastIndexOf(1);
+        document.write(lastIndexOf+"<br>");
+        //includes()
+        var includes=[1,2,2,1].includes(6);
+        document.write(includes+"<br>");//false
+    </script>
+</head>
+<body>
+</body>
+</html>

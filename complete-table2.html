@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 to 20 table</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    <script>
+        var tab="";
+        var tbl="";
+        tbl="<table align='center' border='2px' cellspacing=0 cellpadding='5px'>"
+        for(r=1; r<=10; r=r+1){
+            tbl+="<tr>"
+            for(c=2; c<=20; c=c+1){
+                tab=r*c;
+                tbl+="<td>"+tab+"</td>"
+                
+            }
+            tbl+="</tr>"
+        }
+        tbl+="</table>"
+        document.write(tbl)
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card slider</title>
+    <script src="js/jquery.js"></script>
+    <style>
+        .carousel-container{
+            width: 80%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #cdcccc;
+
+        }
+        .carousel-wrapper{
+            flex: 1;
+            overflow:hidden;
+        }
+        .carousel-track{
+            display: flex;
+            
+            background-color: aquamarine;
+        }
+        .card{
+            flex: 0 0 20%;
+            padding: 30px;
+            margin: 5px;
+            background-color: cornsilk;
+        }
+    </style>
+    <script>
+//         $(document).ready(function(){
+//     let currentIndex = 0; // starting index
+//     const cardCount = $(".card").length; // 12
+//     const visibleCards = 4;
+//     const maxIndex = cardCount - visibleCards; // 12-4 = 8
+
+//     function updateButtons() {
+//         $("#prev").prop("disabled", currentIndex === 0);
+//         $("#next").prop("disabled", currentIndex === maxIndex);
+//     }
+
+//     function moveCarousel() {
+//         let translateX = -(currentIndex * (100/visibleCards)); 
+//         $(".carousel-track").css("transform", `translateX(${translateX}%)`);
+//         updateButtons();
+//     }
+
+//     $("#next").click(function(){
+//         if(currentIndex < maxIndex){
+//             currentIndex++;
+//             moveCarousel();
+//         }
+//     });
+
+//     $("#prev").click(function(){
+//         if(currentIndex > 0){
+//             currentIndex--;
+//             moveCarousel();
+//         }
+//     });
+
+//     // Auto-slide every 3 sec
+//     setInterval(function(){
+//         if(currentIndex < maxIndex){
+//             currentIndex++;
+//         } else {
+//             currentIndex = 0;
+//         }
+//         moveCarousel();
+//     }, 3000);
+
+//     updateButtons(); // initialize
+// });
+
+    </script>
+</head>
+<body>
+    <div class="carousel-container">
+        <button id="prev">prev</button>
+        <div class="carousel-wrapper">
+            <div class="carousel-track">
+                <div class="card">1</div>
+                <div class="card">2</div>
+                <div class="card">3</div>
+                <div class="card">4</div>
+                <div class="card">5</div>
+                <div class="card">6</div>
+                <div class="card">7</div>
+                <div class="card">8</div>
+                <div class="card">9</div>
+                <div class="card">10</div>
+                <div class="card">11</div>
+                <div class="card">12</div>
+            </div>
+        </div>
+        <button id="next">next</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern-1</title>
+    <script src="../js/jquery.js"></script>
+</head>
+<body>
+    <script>
+        for(r=1; r<=5; r++){
+            for(s=1; s<= 5-r; s++){
+                document.write("&nbsp;&nbsp;");
+            }
+            for(c=1; c<=r; c++){
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>
